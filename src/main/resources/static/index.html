@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratoire - Aquarium (PUCP GTICS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Aquarium Virtuel - PUCP GTICS</h1>
+        
+        <!-- Contrôles pour la Pregunta 1 -->
+        <div class="controls">
+            <label for="grid-size">Taille de la grille (x) :</label>
+            <input type="number" id="grid-size" value="6" min="3" max="12">
+            <button id="btn-crear">Créer la Pecera</button>
+        </div>
+
+        <!-- Conteneur principal de l'aquarium -->
+        <div id="aquarium" class="aquarium">
+            <!-- Grille dynamique (Pregunta 1) -->
+            <div id="pecera-grid" class="pecera-grid"></div>
+
+            <!-- Zones des poissons / Cibles de dépôt (Pregunta 2 & 3) -->
+            <div class="fish-zone">
+                <div id="nemo-zone" class="fish-target" data-fish="nemo">
+                    <span class="fish-emoji">🐠</span>
+                    <div class="fish-info">
+                        <h3>Nemo (LocalStorage)</h3>
+                        <p>Score : <span id="nemo-score">0</span></p>
+                        <button id="btn-nemo">+1 Nemo (Manuel)</button>
+                    </div>
+                </div>
+
+                <div id="dory-zone" class="fish-target" data-fish="dory">
+                    <span class="fish-emoji">🐟</span>
+                    <div class="fish-info">
+                        <h3>Dory (SessionStorage)</h3>
+                        <p>Score : <span id="dory-score">0</span></p>
+                        <button id="btn-dory">+1 Dory (Manuel)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteneur des bulles (Pregunta 3) -->
+            <div id="bubbles-container"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

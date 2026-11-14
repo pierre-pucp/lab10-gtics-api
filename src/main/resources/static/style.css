@@ -1,0 +1,179 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 850px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0277bd;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.controls input {
+    width: 60px;
+    padding: 6px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.controls button {
+    padding: 8px 16px;
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controls button:hover {
+    background-color: #01579b;
+}
+
+/* Aquarium avec transition de couleur progressive */
+.aquarium {
+    position: relative;
+    background-color: #add8e6; /* Bleu clair initial */
+    border: 4px solid #01579b;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 480px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 1s ease;
+}
+
+.pecera-grid {
+    display: grid;
+    gap: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.grid-cell {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    aspect-ratio: 1;
+    width: 35px;
+}
+
+.fish-zone {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    z-index: 2;
+}
+
+.fish-target {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 2px dashed #0277bd;
+    min-width: 240px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.fish-target.drag-over {
+    background: rgba(255, 235, 59, 0.9);
+    border-color: #fbc02d;
+}
+
+.fish-emoji {
+    font-size: 2.5rem;
+}
+
+.fish-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.fish-info p {
+    margin: 0 0 6px 0;
+    font-weight: bold;
+    color: #01579b;
+}
+
+.fish-info button {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Bulles dynamiques (Drag and Drop) */
+#bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: grab;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: inset -4px -4px 8px rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.3);
+    animation: floatDown 5s linear forwards;
+}
+
+.bubble.nemo {
+    background: radial-gradient(circle at 30% 30%, #ffa726, #f57c00);
+    border: 1px solid #e65100;
+}
+
+.bubble.dory {
+    background: radial-gradient(circle at 30% 30%, #29b6f6, #0288d1);
+    border: 1px solid #01579b;
+}
+
+.bubble:active {
+    cursor: grabbing;
+}
+
+@keyframes floatDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(260px); }
+}
