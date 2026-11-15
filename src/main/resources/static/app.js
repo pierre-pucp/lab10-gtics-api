@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Événements de glisser-déposer natifs
         bubble.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', bubble.dataset.type);
-            setTimeout(() => bubble.style.opacity = '0.4', 0);
+            setTimeout(() ff=> bubble.style.opacity = '0.4', 0);
         });
 
         bubble.addEventListener('dragend', () => {
